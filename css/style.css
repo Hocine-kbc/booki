@@ -1,0 +1,705 @@
+
+/****** General ***********/
+* {
+    font-family: 'Raleway', sans-serif; /*Applique la police 'Raleway' à tous les éléments de la page.*/
+}
+
+:root {  /*Définit des variables CSS personnalisées pour les couleurs*/ 
+    --main-color: #0a7cff; /*couleur principales*/
+    --main-bg-color: #F2F2F2; /*la couleur de fond principale*/
+    --filter-bg-color: #DEEBFF;/*la couleur de fond des filtres*/
+}
+/*//////////////////////////////////////// element de l'en-tête , menu et logo /////////////////////////////*/
+
+.header-content {
+    display: flex; /*Applique un conteneur flexible */
+    align-items: center; /* Aligne les éléments verticalement au centre  */
+    justify-content: space-between; /* Espace entre les éléments pour que le menu soit à droite */
+    flex-wrap: wrap; /*les element peuvent se renvoyé a la ligne si necessaire*/
+    width: 100%; /* Assure que le contenu occupe toute la largeur disponible */
+}
+
+.logo {
+    width: 80px; /* Largeur du logo */
+    height: 25px; /* Hauteur du logo */
+}
+.logo-container {  /*contener du logo */
+    display: flex;
+    align-items: center;
+    padding-right: 50px; /*espace autour du logo (droite) */
+    padding-top: 30px;
+    padding-bottom: 30px;
+   
+}  
+
+.menu {
+    margin-left: auto; /* Pousse le menu complètement à droite */
+    display: flex;
+    align-items: center;
+    
+}
+
+.menu-item {
+    position: relative;
+    margin-left: 20px; /* Espacement entre les boutons */
+    padding: 10px 20px; /* Padding pour les boutons */
+    color: #000; /* Couleur du texte */
+    font-family: 'Raleway', sans-serif; /* Police de caractère utilisée*/
+    font-size: 17px;   /* Taille de la police */
+    font-weight: 400;  /* Épaisseur de la police */
+    line-height: 18.78px;  /* Hauteur de ligne */
+    text-align: center;  /* Alignement du texte au centre */
+    text-underline-position: from-font; /* Position du soulignement à partir de la police */
+    text-decoration-skip-ink: none;  /* Évite que l'encre ne saute les sous-titres */
+    transition: color 0.3s ease; /* Ajoute une transition pour la couleur */
+
+}
+
+.menu-item::before {
+    content: ''; /*Crée un pseudo-élément ::before vide.*/
+    position: absolute; /*Positionne le pseudo-élément de manière absolue par rapport au bouton (qui est position: relative)*/
+    top: -10px; /* Positionne la barre au-dessus du bouton */
+    left: 50%; /* Centre la barre horizontalement */
+    transform: translateX(-50%); /* Ajuste la position pour qu'elle soit centrée */
+    height: 2px; /* Hauteur de la barre */
+    background-color: transparent; /* La barre est transparente par défaut */
+    transition: background-color 0.2s ease; /* Ajoute une transition pour la couleur de la barre */
+}
+.menu-item.active {
+    color: #0065FC; /* Couleur bleue lorsque le menu est actif */
+}
+.menu-item.active, .menu-item:hover { 
+    color: #0065FC; /* Couleur bleue pour le texte actif et au survol */
+}
+.menu-item.active::before, .menu-item:hover::before {
+    background-color: #0065FC; /* La barre est bleue pour l'onglet actif et au survol */
+}
+
+.menu-item:nth-child(1)::before {
+    width: 113px; /* Largeur de la barre Hébergements */
+}
+
+.menu-item:nth-child(2)::before {
+    width: 63px; /* Largeur de la barre Activités */
+}
+
+/*////////////////////////////////pour gere le visuel des menu actif //////////////////////////////////////
+
+/* Assure-toi que les IDs correspondent aux liens */
+#hebergements:target ~ .menu .menu-item[href="#hebergements"] {
+    color: #0065FC; /* Couleur bleue pour le menu Hébergements */
+}
+
+#hebergements:target ~ .menu .menu-item[href="#hebergements"]::before {
+    background-color: #0065FC; /* Barre bleue pour le menu Hébergements */
+}
+
+#activites:target ~ .menu .menu-item[href="#activites"] {
+    color: #0065FC; /* Couleur bleue pour le menu Activités */
+}
+
+#activites:target ~ .menu .menu-item[href="#activites"]::before {
+    background-color: #0065FC; /* Barre bleue pour le menu Activités */
+}
+
+
+/*pour faire cela normalement on devrai le faire avec Javascript */
+
+/*////////////////////////////////////// LE TITRE DE LA PAGE /////////////////////////////////////////////////*/
+
+h1 {
+    width: 1340px;
+    Height: 26px;
+    Size: 22px;
+    font-weight: 700;
+    line-height: 25.83px;  
+}
+
+h2 {
+    width: 1340px;
+    height: 19px;
+    font-weight: 400;
+    line-height: 18.78px;
+    size: 16px;
+    margin-bottom: 40px; /* Ajoute une marge inférieure pour augmenter l'espace */
+    margin-top: 20px;
+}
+
+/*/////////////////////////////////////////// SECTION BARRE DE RECHERCHE////////////////////////////////////*/
+.search-bar {
+    display: flex;
+    width: 377px; /* Ajuste la largeur maximale selon tes besoins */
+    height: 49px; /* Ajuste la hauteur */
+    margin: 20px 0;
+    align-items: center;
+    max-width: 300px; /* Ajuste la largeur maximale selon tes besoins */
+    margin: 10px; /* Centrer la barre de recherche */
+    justify-content: flex-start; /* Aligne la barre de recherche à gauche */
+    border : 1px;
+    margin-top: 20px; /* Ajuste l'espace au-dessus de la barre de recherche */
+    margin-bottom: 20px;
+    /* Autres styles existants */
+    
+}
+
+.search-icon-container {
+    background-color: #f0f0f0; /* Fond gris pour l'icône */
+    padding: 10px; /* Espace autour de l'icône */
+    border: 1px solid #F2F2F2; /* Bordure */
+    border-radius: 10px 0 0 10px; /* Coins arrondis pour correspondre à la barre de recherche */
+}
+
+.search-icon {
+    color: #000000; /* Couleur de l'icône de localisation */
+    
+}
+
+.position-icon {
+    display: flex;
+    align-items: center; /* Centre verticalement l'icône */
+    justify-content: center; /* Centre horizontalement l'icône */
+    width: 50px; /* Largeur du conteneur */
+    height: 49px; /* Hauteur du conteneur */
+    gap: 0px; /* Pas d'espacement interne */
+    border-radius: 15px 0px 0px 15px; /* Rayon des coins spécifiques */
+    border-top: 1px solid #000; /* Bordure en haut uniquement */
+    opacity: 1; /* Opacité à 1 par défaut */
+}
+
+.search-input {
+    flex-grow: 3;
+       size: 18px;
+    align-items: center;
+    font-weight: 700;
+    border: 1px solid #F2F2F2; /* Bordure pour correspondre au conteneur de l'icône */
+    border-left: none; /* Enlève la bordure gauche pour se fondre avec l'icône */
+    padding: 10px;
+    font-size: 16px;
+    border-radius: 0; /* Pas de coins arrondis */
+    outline: none; /* Enlève le contour par défaut lors du focus */
+    background-color: white; /* Fond blanc */
+
+}
+.search-input::placeholder {
+    color: #000000; /* Change la couleur du texte du placeholder ici (par exemple, gris) */
+}
+
+.search-button {
+    background-color: #0065FC; /* Fond bleu */
+    color: white;
+    border: 1px solid #0065FC; /* Bordure bleue pour correspondre au fond */
+    padding: 10px 20px;
+    border-radius: 0 10px 10px 0; /* Coins arrondis pour correspondre à la barre de recherche */
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: bold; /* Met le texte en gras */
+}
+
+.search-button:hover {
+    background-color: #0a167a; /* Couleur au survol */
+}
+
+
+/*//////////////////////////////////////// SECTION FILTRES /////////////////////////////////////////////*/
+
+.filters {
+    display: flex;
+    align-items: center; /* Aligne les éléments verticalement */
+    margin-top: 20px; /* Ajoute un espace au-dessus des filtres */
+}
+
+.filter-label {
+    margin-right: 10px; /* Espace entre le label et les boutons de filtre */
+    font-family: 'Raleway', sans-serif;
+    font-size: 17px; /* Taille de la police */
+    font-weight: 700; /* Épaisseur de la police */
+    line-height: 19.96px; /* Hauteur de ligne */
+    color: #000; /* Couleur du texte */
+    text-align: left; /* Alignement du texte à gauche */
+    text-underline-position: from-font;
+    text-decoration-skip-ink: none;
+}
+
+.filter-button {
+    display: flex;
+    align-items: center; /* Aligne les icônes et le texte verticalement */
+    background-color: #fff; /* Couleur de fond blanche */
+    border: 1px solid #ccc; /* Bordure grise */
+    border-radius: 25px; /* Rayon des coins arrondis */
+    padding: 15px 19px; /* Padding spécifique */
+    margin-right: 10px; /* Espacement entre les boutons */
+    font-family: 'Raleway', sans-serif;
+    font-size: 17px; /* Taille de la police */
+    font-weight: 700; /* Épaisseur de la police */
+    line-height: 19.96px; /* Hauteur de ligne */
+    color: #000; /* Couleur du texte */
+    cursor: pointer; /* Curseur en forme de main au survol */
+    transition: background-color 0.3s ease; /* Transition pour la couleur de fond */
+    text-align: left; /* Alignement du texte à gauche */
+    text-underline-position: from-font;
+    text-decoration-skip-ink: none;
+}
+
+.filter-button:hover {
+    background-color:#DEEBFF; /* Couleur de fond bleue au survol */
+    color: #000000; /* Couleur du texte blanche au survol */
+}
+
+.filter-icon {
+    width: 22px; /* Largeur des icônes */
+    height: 22px; /* Hauteur des icônes */
+    margin-right: 10px; /* Espace entre l'icône et le texte */
+}
+
+/* Réglages spécifiques pour le bouton Économique */
+#economique-button {
+    width: 1px; /* Largeur Hug */
+    height: 50px; /* Hauteur fixe */
+    padding: 4px 19px 4px 19px; /* Padding spécifique */
+    gap: 10px; /* Espacement interne */
+    border-radius: 25px 0px 0px 0px; /* Rayon des coins spécifiques */
+    border-top: 4px solid #000; /* Bordure en haut uniquement */
+    border-right: none; /* Pas de bordure à droite */
+    border-bottom: none; /* Pas de bordure en bas */
+    border-left: none; /* Pas de bordure à gauche */
+    opacity: 0; /* Opacité à 0 par défaut */
+}
+
+/* Réglages spécifiques pour les autres boutons */
+#familial-button {
+    width: 167px;
+    height: 50px;
+    padding: 4px 19px 4px 19px;
+    gap: 10px;
+    border-radius: 25px 0px 0px 0px;
+    border-top: 2px solid #000;
+    border-right: none;
+    border-bottom: none;
+    border-left: none;
+    opacity: 0;
+}
+
+#romantique-button {
+    width: 167px;
+    height: 50px;
+    padding: 4px 19px 4px 19px;
+    gap: 10px;
+    border-radius: 25px 0px 0px 0px;
+    border-top: 2px solid #000;
+    border-right: none;
+    border-bottom: none;
+    border-left: none;
+    opacity: 0;
+}
+
+#pepites-button {
+    width: 167px;
+    height: 50px;
+    padding: 4px 19px 4px 19px ;
+    gap: 10px;
+    border-radius: 25px 0px 0px 0px;
+    border-top: 2px solid #000;
+    border-right: none;
+    border-bottom: none;
+    border-left: none;
+    opacity: 0;
+}
+
+#info-component {
+    width: 1340px; /* Largeur fill */
+    height: 24px; /* Hauteur fixe */
+    display: flex;
+    align-items: center; /* Aligne les éléments verticalement */
+    gap: 10px; /* Espacement entre les éléments */
+    opacity: 1; /* Opacité 1 par défaut */
+    margin-top: 20px; /* Ajoute un espace au-dessus de la phrase */
+    font-family: 'Raleway', sans-serif;
+    font-size: 16px; /* Taille de la police */
+    font-weight: 400; /* Épaisseur de la police */
+    line-height: 18.78px; /* Hauteur de ligne */
+    text-align: left; /* Alignement du texte à gauche */
+    text-underline-position: from-font;
+    text-decoration-skip-ink: none;
+    margin-left: 0px;
+    margin-bottom: 20px;
+}
+
+
+
+.info-icon {
+    display: flex;
+    font-family: 'Papyrus', sans-serif; /* Change la police de caractère de l'icône */
+    align-items: center;
+    justify-content: center;
+    width: 24px; /* Largeur du cercle */
+    height: 24px; /* Hauteur du cercle */
+    border-radius: 50%; /* Cercle parfait */
+    background-color: #fff; /* Couleur de fond blanche */
+    border: 1px solid #D9D9D9; /* Bordure grise */
+    font-size: 16px; /* Taille de la police de l'icône */
+    font-weight: bold; /* Épaisseur de la police de l'icône */
+    color: #0065FC; /* Couleur du "i" */
+    gap: 0px; /* Pas d'espacement interne */
+}
+
+.info-link {
+    color: #000000; /* Couleur du lien */
+    text-decoration: none; /* Supprime le soulignement */
+    transition: color 0.3s ease; /* Transition pour la couleur */
+    
+}
+
+.info-link:hover {
+    color: #0065FC; /* Couleur du lien au survol */
+    /*text-decoration: underline; /* Ajoute le soulignement au survol */
+}
+
+
+
+/******************************* FIN DE PREMIERE PARTIE (EN-TETE) **********************************/
+
+.fa-solid {
+    color: var(--main-color);
+}
+
+body {
+    display: flex;
+    justify-content: center;
+}
+
+.main-container {
+    width: 100%;
+    max-width: 1440px;
+    padding: 0 50px;
+    box-sizing: border-box;
+    
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+.section-title {
+    margin: 0;
+    font-size: 22px;
+    font-weight: bold; /* Met le texte en gras */
+}
+
+.card {
+    background-color: white;
+    border-radius: 20px;
+    padding: 5px;
+    filter: drop-shadow(0px 3px 15px rgba(0, 0, 0, 0.1));
+}
+.card:hover {
+    transform: scale(1.05); /* Effet d'agrandissement au survol */
+    transition: transform 0.2s ease-in-out; /* Transition pour l'effet d'agrandissement */
+}
+
+.card img {
+    object-fit: cover;
+}
+
+.card-title {
+    font-size: 16px;
+}
+
+.euro {
+    font-weight: 700;
+}
+
+.neutral-star {
+    color: var(--main-bg-color)
+}
+
+/****** Hebergements And Populaires ***********/
+.hebergements-and-populaires {
+    display: flex;
+    justify-content: space-between;
+}
+
+.hebergements-and-populaires section {
+    background-color: var(--main-bg-color);
+    border-radius: 20px;
+    padding: 30px;
+    box-sizing: border-box;
+}
+
+/****** Hebergements ***********/
+.hebergements {
+    width: 65%;
+  
+}
+/*///////////////////////////////////////PARTIU HEBERGEMENT////////////////////////////////////*/
+
+.hebergement-cards .card {
+    display: flex;
+    margin-top: 33px;
+    flex-wrap: wrap; /* Permet de passer à la ligne suivante après trois cartes */
+    justify-content: space-between; /* Assure que les cartes sont espacées de manière uniforme */
+    gap: 20px; /* Ajoute de l'espace entre les cartes */
+    width: 250.33px;
+    
+}
+
+.hebergement-cards{
+   display: flex;
+    flex-wrap: wrap;
+    gap:10px;
+    transition: transform 0.1s ease-in-out; /* Transition pour l'effet d'agrandissement */
+}
+
+.hebergement-cards img {
+    width: 100%;
+    height: 136px;
+    /*border-top-left-radius: 20px ;
+    border-bottom-left-radius: 20px;*/
+    border-radius: 20px 20px;
+}
+
+.hebergement-cards .card-content {
+    width: 67%;
+    padding-left: 15px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    box-sizing: border-box;
+    
+    }
+    .hebergement-cards .card:hover {
+        transform: scale(1.05); /* Effet d'agrandissement au survol */
+        transition: transform 0.2s ease-in-out; /* Transition pour l'effet d'agrandissement */
+    }
+
+   
+.hebergement-cards .card-title {
+    margin-top: 10px;
+    margin-bottom: 4px;
+    
+}
+
+.hebergement-cards .card-subtitle { /*permet d'enlevé les espace entre les tite de la carte (nom hotel , prix, etoile*/
+    margin:0px;
+}
+
+.hebergement-cards .card-rating {
+    margin-bottom: 5px;
+}
+
+/*/////////////////////////////////////////  AFFICHER PLUS ///////////////////////////////////////*/
+
+.afficher-plus {
+    display: inline-block; /* Permet de traiter le lien comme un bouton */  
+    font-size: 16px; /* Taille de la police */
+    font-weight: 700; /* Met le texte en gras */
+    color: #000; /* Couleur du texte */
+    cursor: pointer; /* Change le curseur au survol */
+    margin-top: 20px;
+    margin-bottom: 10px;
+    
+}
+
+.afficher-plus:hover {
+       color: #0065FC; /* Change la couleur du texte au survol */
+}
+
+
+/*///////////////////////////////////////// POPULAIRE  //////////////////////////////////////////////////////*/
+.populaires {
+    width: 32%;
+}
+
+.populaires-title {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.populaires-cards .card {
+    display: flex;
+    margin-top: 33px;
+}
+
+.populaires-cards img {
+    width: 33%;
+    height: 136px;
+    border-top-left-radius: 20px;
+    border-bottom-left-radius: 20px;
+}
+
+.populaires-cards .card-content {
+    width: 67%;
+    padding-left: 15px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    box-sizing: border-box;
+}
+
+.populaires-cards .card-title {
+    margin-top: 10px;
+    margin-bottom: 4px;
+}
+
+.populaires-cards .card-subtitle {
+    margin: 0;
+}
+
+.populaires-cards .card-rating {
+    margin-bottom: 5px;
+}
+
+/*///////////////////////////////////////// ACTIVITE A MARSEILLE ////////////////////////////////////////*/
+.activites-title{
+    margin-top: 70px;
+    margin-bottom: 30px;
+    margin-left: 30px;
+}
+/* CSS pour la disposition horizontale */
+
+.activites-container {
+    display: flex; /* Utilisation de Flexbox pour la disposition */
+    flex-wrap: nowrap; /* Empêcher les éléments de passer à la ligne */
+    justify-content: center; /* Centrer les cartes horizontalement */
+    gap: 25px; /* Espace horizontal entre les cartes (ajustez cette valeur selon vos besoins) */
+}
+
+/* CSS pour les cartes */
+.activites .card {
+    width: 297.5px; /* Largeur de la carte */
+    height: 439px; /* Hauteur de la carte */
+    display: flex; /* Utilisation de Flexbox pour l'intérieur de la carte */
+    flex-direction: column; /* Disposition verticale des éléments internes */
+    justify-content: space-between; /* Espacement entre les éléments internes */
+    margin: 0; /* Supprimez les marges pour éviter l'espacement supplémentaire */
+    box-shadow: 0 3px 15px 0 rgba(0, 0, 0, 0.1); /* Ombre autour de la carte */
+    border-radius: 20px; /* Bords arrondis avec un rayon de 20px */
+    overflow: hidden; /* Masquer le contenu qui dépasse des bords de la carte */
+    padding: 0; /* Supprimez les espacements internes */
+    
+    
+}
+
+.activites .card:hover {
+    transform: scale(1.05); /* Effet d'agrandissement au survol */
+    transition: transform 0.2s ease-in-out; /* Transition pour l'effet d'agrandissement */
+    
+}
+
+.activites .card img {
+    width: 297.5px; /* Largeur de l'image */
+    height: 380px; /* Hauteur de l'image */
+    object-fit: cover; /* Redimensionner l'image pour remplir le cadre tout en gardant ses proportions */
+    border-radius: 20px 20px 0 0; /* Bords arrondis avec un rayon de 20px en haut de l'image */
+    object-fit: cover; /* Redimensionner l'image pour qu'elle couvre complètement le conteneur */
+    object-position: center; /* Centrer l'image dans le conteneur */
+    padding: 0; /* Supprimez les espacements internes de l'image */
+    flex-shrink: 0;
+    
+}
+
+
+.activites .card-content {
+    padding: 5px; /* Espacement intérieur */
+    flex-grow: 1; /* Permet au contenu de prendre tout l'espace disponible */
+    padding-left: 20px; /*l'aisser une marge a gauche de 20px*/
+}
+
+.activites .card-title {
+    font-size: 16px; /* Taille de la police ajustée pour que les titres soient sur une ligne */
+    font-weight: bold; /* Poids de la police en gras */
+    margin-bottom: 10px; /* Marge inférieure du titre */
+    text-align: left; /* Aligner le titre à gauche */
+    white-space: nowrap; /* Empêcher les titres de passer à la ligne */
+    overflow: hidden; /* Masquer le texte qui dépasse */
+    text-overflow: ellipsis; /* Ajouter des points de suspension si le texte dépasse */
+}
+
+/*///////////////////////////////////////////////// PARTI FOOTER /////////////////////////////////////////////*/
+
+/* CSS pour le pied de page */
+.footer {
+    width: 1340px; /* Largeur du pied de page */
+    height: 163px; /* Hauteur du pied de page */
+    display: flex; /* Utilisation de Flexbox pour la disposition */
+    justify-content: space-between; /* Espacement égal entre les sections */
+    background: #F2F2F2; /* Couleur de fond */
+    padding: 20px; /* Espacement interne */
+    border-radius: 10px;
+    margin-top: 50px;
+}
+
+.footer-section {
+    flex: 1; /* Chaque section prend une part égale de l'espace disponible */
+    margin-right: 20px; /* Espacement à droite de chaque section */
+}
+
+.footer-section h3 {
+    margin-bottom: 10px; /* Marge inférieure des titres de sections */
+}
+
+.footer-section ul {
+    list-style: none; /* Supprimer les puces */
+    padding: 0; /* Supprimer les espacements internes */
+}
+
+.footer-section ul li {
+    margin-bottom: 5px; /* Marge inférieure des éléments de la liste */
+}
+
+.footer-section ul li a {
+    text-decoration: none; /* Supprimer la décoration des liens */
+    color: #333; /* Couleur des liens */
+}
+
+.footer-section ul li a:hover {
+    color:#0065FC;
+}
+/*/////////////////////////////////////////// FIN DE LA SECTION PIED DE PAGE /////////////////////////////////*/
+
+
+
+/* *****************Le code ci-dessous correspond à la version responsive uniquement ********************/
+
+
+/****** Media queries ***********/
+/* Medium devices (tablets, less/equal than 1024px) */
+
+@media (max-width: 1024px) {
+    .hebergements-and-populaires {
+        flex-direction: column;
+    }
+
+    .hebergements {
+        width: 100%;
+    }
+
+    .populaires {
+        width: 100%;
+        margin-top: 100px;
+    }
+
+    .populaires-cards {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+    .populaires-cards a {
+        width: 30%;
+    }
+
+    .populaires-cards .card-title {
+        font-size: 14px;
+    }
+
+    .populaires-cards .card-subtitle {
+        font-size: 13px;
+    }
+}
+
+/* Small devices (phones, less than 768px) */
+@media (max-width: 767.98px) {
+    /* ... */
+}
