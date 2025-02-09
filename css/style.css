@@ -4,6 +4,7 @@
     font-family: 'Raleway', sans-serif; /*Applique la police 'Raleway' à tous les éléments de la page.*/
 }
 
+
 :root {  /*Définit des variables CSS personnalisées pour les couleurs*/ 
     --main-color: #0a7cff; /*couleur principales*/
     --main-bg-color: #F2F2F2; /*la couleur de fond principale*/
@@ -36,13 +37,14 @@
     margin-left: auto; /* Pousse le menu complètement à droite */
     display: flex;
     align-items: center;
+   
     
 }
 
 .menu-item {
     position: relative;
     margin-left: 20px; /* Espacement entre les boutons */
-    padding: 10px 20px; /* Padding pour les boutons */
+    padding: 10px 10px; /* Padding pour les boutons */
     color: #000; /* Couleur du texte */
     font-family: 'Raleway', sans-serif; /* Police de caractère utilisée*/
     font-size: 17px;   /* Taille de la police */
@@ -52,93 +54,79 @@
     text-underline-position: from-font; /* Position du soulignement à partir de la police */
     text-decoration-skip-ink: none;  /* Évite que l'encre ne saute les sous-titres */
     transition: color 0.3s ease; /* Ajoute une transition pour la couleur */
+    top: -18px;
 
 }
 
-.menu-item::before {
-    content: ''; /*Crée un pseudo-élément ::before vide.*/
-    position: absolute; /*Positionne le pseudo-élément de manière absolue par rapport au bouton (qui est position: relative)*/
-    top: -10px; /* Positionne la barre au-dessus du bouton */
-    left: 50%; /* Centre la barre horizontalement */
-    transform: translateX(-50%); /* Ajuste la position pour qu'elle soit centrée */
-    height: 2px; /* Hauteur de la barre */
-    background-color: transparent; /* La barre est transparente par défaut */
-    transition: background-color 0.2s ease; /* Ajoute une transition pour la couleur de la barre */
-}
-.menu-item.active {
-    color: #0065FC; /* Couleur bleue lorsque le menu est actif */
-}
-.menu-item.active, .menu-item:hover { 
-    color: #0065FC; /* Couleur bleue pour le texte actif et au survol */
-}
-.menu-item.active::before, .menu-item:hover::before {
-    background-color: #0065FC; /* La barre est bleue pour l'onglet actif et au survol */
+/* Style pour l'élément actif */
+.menu-item:focus {
+    color: #0065FC; /* Couleur du texte actif */
+   
+    outline: none; /* Enlever le contour par défaut */
+    position: relative; /* Nécessaire pour positionner la barre au-dessus */
 }
 
-.menu-item:nth-child(1)::before {
-    width: 113px; /* Largeur de la barre Hébergements */
+/* Barre au-dessus du menu actif */
+.menu-item:focus::before {
+    content: ''; /* Création de la barre */
+    display: block;
+    width: 90%; /* La barre s'étend sur toute la largeur de l'élément */
+    height: 3px; /* Hauteur de la barre */
+    background-color: #0065FC; /* Couleur de la barre */
+    position: absolute; /* Positionnement absolu pour déplacer la barre au-dessus */
+    top: -13px; /* Positionner la barre au-dessus de l'élément */
+    left: 50%; /* La barre commence à l'extrémité gauche de l'élément */
+    transform: translateX(-50%);
 }
 
-.menu-item:nth-child(2)::before {
-    width: 63px; /* Largeur de la barre Activités */
-}
-
-/*////////////////////////////////pour gere le visuel des menu actif //////////////////////////////////////
-
-/* Assure-toi que les IDs correspondent aux liens */
-#hebergements:target ~ .menu .menu-item[href="#hebergements"] {
-    color: #0065FC; /* Couleur bleue pour le menu Hébergements */
-}
-
-#hebergements:target ~ .menu .menu-item[href="#hebergements"]::before {
-    background-color: #0065FC; /* Barre bleue pour le menu Hébergements */
-}
-
-#activites:target ~ .menu .menu-item[href="#activites"] {
-    color: #0065FC; /* Couleur bleue pour le menu Activités */
-}
-
-#activites:target ~ .menu .menu-item[href="#activites"]::before {
-    background-color: #0065FC; /* Barre bleue pour le menu Activités */
-}
+/*/////////////pour faire cela normalement on devrai le faire avec Javascript /////////////////////////////*/
 
 
-/*pour faire cela normalement on devrai le faire avec Javascript */
 
 /*////////////////////////////////////// LE TITRE DE LA PAGE /////////////////////////////////////////////////*/
 
-h1 {
-    width: 1340px;
-    Height: 26px;
-    Size: 22px;
-    font-weight: 700;
-    line-height: 25.83px;  
+.header-titles {
+    max-width: 100%;
+    width: 90%; /* Ajuste la largeur */
 }
 
-h2 {
-    width: 1340px;
-    height: 19px;
-    font-weight: 400;
-    line-height: 18.78px;
-    size: 16px;
-    margin-bottom: 40px; /* Ajoute une marge inférieure pour augmenter l'espace */
-    margin-top: 20px;
+.header-titles h1, 
+.header-titles h2 {
+    display: block; /* Force chaque élément à rester sur sa propre ligne */
+    text-align: left; /* Centre le texte */
+    white-space: normal; /* Permet au texte de revenir à la ligne si nécessaire */
+    overflow: visible; /* S'assure que rien ne soit coupé */
 }
+
+.header-titles h1 {
+    font-size: 24px; /* Ajuste la taille du titre */
+    font-weight: bold;
+    margin-bottom: 10px; /* Espace entre le h1 et le h2 */
+}
+
+.header-titles h2 {
+    font-size: 18px;
+    font-weight: normal;
+    color: #666;
+    margin-top: 0;
+}
+
 
 /*/////////////////////////////////////////// SECTION BARRE DE RECHERCHE////////////////////////////////////*/
 .search-bar {
     display: flex;
     width: 377px; /* Ajuste la largeur maximale selon tes besoins */
     height: 49px; /* Ajuste la hauteur */
-    margin: 20px 0;
+    align-items: center;
+    margin: 20px ;
     align-items: center;
     max-width: 300px; /* Ajuste la largeur maximale selon tes besoins */
     margin: 10px; /* Centrer la barre de recherche */
     justify-content: flex-start; /* Aligne la barre de recherche à gauche */
     border : 1px;
     margin-top: 20px; /* Ajuste l'espace au-dessus de la barre de recherche */
-    margin-bottom: 20px;
-    /* Autres styles existants */
+    margin-bottom: 20px; /* Ajuste l'espace au-dessus de la barre de recherche */
+    
     
 }
 
@@ -168,7 +156,7 @@ h2 {
 
 .search-input {
     flex-grow: 3;
-       size: 18px;
+    size: 18px;
     align-items: center;
     font-weight: 700;
     border: 1px solid #F2F2F2; /* Bordure pour correspondre au conteneur de l'icône */
@@ -202,22 +190,27 @@ h2 {
 
 /*//////////////////////////////////////// SECTION FILTRES /////////////////////////////////////////////*/
 
+/* Style du conteneur des filtres */
 .filters {
     display: flex;
-    align-items: center; /* Aligne les éléments verticalement */
-    margin-top: 20px; /* Ajoute un espace au-dessus des filtres */
+    align-items: center; /* Alignement sur la ligne en version desktop */
+    gap: 20px; /* Espace entre "Filtres" et les options */
+    flex-wrap: wrap; /* Permet le passage en colonne en mode tablette */
 }
 
+/* Style du mot "Filtres" */
 .filter-label {
-    margin-right: 10px; /* Espace entre le label et les boutons de filtre */
-    font-family: 'Raleway', sans-serif;
-    font-size: 17px; /* Taille de la police */
-    font-weight: 700; /* Épaisseur de la police */
-    line-height: 19.96px; /* Hauteur de ligne */
-    color: #000; /* Couleur du texte */
-    text-align: left; /* Alignement du texte à gauche */
-    text-underline-position: from-font;
-    text-decoration-skip-ink: none;
+    font-size: 18px;
+    font-weight: bold;
+    white-space: nowrap; /* Empêche "Filtres" de passer à la ligne en version desktop */
+}
+
+/* Conteneur des options de filtre */
+.filter-options {
+    display: flex;
+    gap: 15px; /* Espace entre les boutons */
+    flex-wrap: nowrap; /* Les options restent sur la même ligne */
+    overflow-x: auto; /* Ajoute une barre de défilement horizontale si nécessaire */
 }
 
 .filter-button {
@@ -226,8 +219,15 @@ h2 {
     background-color: #fff; /* Couleur de fond blanche */
     border: 1px solid #ccc; /* Bordure grise */
     border-radius: 25px; /* Rayon des coins arrondis */
-    padding: 15px 19px; /* Padding spécifique */
-    margin-right: 10px; /* Espacement entre les boutons */
+    /*padding: 15px 19px; /* Padding spécifique */
+    /*margin-right: 0px; /* Espacement entre les boutons */
+    padding-left: 19px;
+    padding-right: 19px;
+    padding-top: 4px;
+    padding-bottom: 4px;
+    width:173px;
+    height: 50px;
+   
     font-family: 'Raleway', sans-serif;
     font-size: 17px; /* Taille de la police */
     font-weight: 700; /* Épaisseur de la police */
@@ -248,7 +248,7 @@ h2 {
 .filter-icon {
     width: 22px; /* Largeur des icônes */
     height: 22px; /* Hauteur des icônes */
-    margin-right: 10px; /* Espace entre l'icône et le texte */
+    margin-right: 5px; /* Espace entre l'icône et le texte */
 }
 
 /* Réglages spécifiques pour le bouton Économique */
@@ -336,25 +336,11 @@ h2 {
     border-radius: 50%; /* Cercle parfait */
     background-color: #fff; /* Couleur de fond blanche */
     border: 1px solid #D9D9D9; /* Bordure grise */
-    font-size: 16px; /* Taille de la police de l'icône */
+    font-size: 12px; /* Taille de la police de l'icône */
     font-weight: bold; /* Épaisseur de la police de l'icône */
     color: #0065FC; /* Couleur du "i" */
     gap: 0px; /* Pas d'espacement interne */
 }
-
-.info-link {
-    color: #000000; /* Couleur du lien */
-    text-decoration: none; /* Supprime le soulignement */
-    transition: color 0.3s ease; /* Transition pour la couleur */
-    
-}
-
-.info-link:hover {
-    color: #0065FC; /* Couleur du lien au survol */
-    /*text-decoration: underline; /* Ajoute le soulignement au survol */
-}
-
-
 
 /******************************* FIN DE PREMIERE PARTIE (EN-TETE) **********************************/
 
@@ -433,59 +419,56 @@ a {
 }
 /*///////////////////////////////////////PARTIU HEBERGEMENT////////////////////////////////////*/
 
-.hebergement-cards .card {
-    display: flex;
+/* Conteneur des cartes d'hébergement */
+.hebergement-cards {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 3 colonnes */
+    grid-template-rows: repeat(2, 1fr); /* 2 lignes */
+    gap: 20px; /* Ajout d'un espace entre les cartes */
     margin-top: 33px;
-    flex-wrap: wrap; /* Permet de passer à la ligne suivante après trois cartes */
-    justify-content: space-between; /* Assure que les cartes sont espacées de manière uniforme */
-    gap: 20px; /* Ajoute de l'espace entre les cartes */
-    width: 250.33px;
-    
-}
-
-.hebergement-cards{
-   display: flex;
-    flex-wrap: wrap;
-    gap:10px;
     transition: transform 0.1s ease-in-out; /* Transition pour l'effet d'agrandissement */
+    width: 100%; /* S'assurer que le conteneur prend toute la largeur */
 }
 
+/* Style des images des cartes */
 .hebergement-cards img {
     width: 100%;
     height: 136px;
-    /*border-top-left-radius: 20px ;
-    border-bottom-left-radius: 20px;*/
-    border-radius: 20px 20px;
+    object-fit: cover; /* Assure que l'image couvre toute la zone de la carte */
+    border-radius: 20px 20px 0 0;
 }
 
+/* Style du contenu de chaque carte */
 .hebergement-cards .card-content {
-    width: 67%;
-    padding-left: 15px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    padding-left: 15px;
     box-sizing: border-box;
-    
-    }
-    .hebergement-cards .card:hover {
-        transform: scale(1.05); /* Effet d'agrandissement au survol */
-        transition: transform 0.2s ease-in-out; /* Transition pour l'effet d'agrandissement */
-    }
+}
 
-   
+/* Effet au survol d'une carte */
+.hebergement-cards .card:hover {
+    transform: scale(1.05); /* Agrandissement de la carte au survol */
+    transition: transform 0.2s ease-in-out; /* Transition douce pour l'effet d'agrandissement */
+}
+
+/* Style du titre de la carte */
 .hebergement-cards .card-title {
     margin-top: 10px;
     margin-bottom: 4px;
-    
 }
 
-.hebergement-cards .card-subtitle { /*permet d'enlevé les espace entre les tite de la carte (nom hotel , prix, etoile*/
-    margin:0px;
+/* Réduction de l'espacement entre les sous-titres */
+.hebergement-cards .card-subtitle {
+    margin: 0;
 }
 
+/* Style pour la notation */
 .hebergement-cards .card-rating {
     margin-bottom: 5px;
 }
+
 
 /*/////////////////////////////////////////  AFFICHER PLUS ///////////////////////////////////////*/
 
@@ -620,13 +603,12 @@ a {
 
 /* CSS pour le pied de page */
 .footer {
-    width: 1340px; /* Largeur du pied de page */
+    width: 1260px; /* Largeur du pied de page */
     height: 163px; /* Hauteur du pied de page */
     display: flex; /* Utilisation de Flexbox pour la disposition */
     justify-content: space-between; /* Espacement égal entre les sections */
     background: #F2F2F2; /* Couleur de fond */
     padding: 20px; /* Espacement interne */
-    border-radius: 10px;
     margin-top: 50px;
 }
 
@@ -645,7 +627,7 @@ a {
 }
 
 .footer-section ul li {
-    margin-bottom: 5px; /* Marge inférieure des éléments de la liste */
+    margin-bottom: 15px; /* Marge inférieure des éléments de la liste */
 }
 
 .footer-section ul li a {
@@ -656,6 +638,9 @@ a {
 .footer-section ul li a:hover {
     color:#0065FC;
 }
+
+
+
 /*/////////////////////////////////////////// FIN DE LA SECTION PIED DE PAGE /////////////////////////////////*/
 
 
@@ -674,7 +659,7 @@ a {
     .hebergements {
         width: 100%;
     }
-
+    
     .populaires {
         width: 100%;
         margin-top: 100px;
@@ -698,8 +683,161 @@ a {
         font-size: 13px;
     }
 }
+/* /////////////////// Style spécifique pour le mot "Voir plus" /////////////////////////////////*/
+.voir-plus {
+    display: block; /* Assurez-vous que c'est un bloc */
+    width: 100%; /* Occupe toute la largeur disponible */
+    margin-bottom: 10px; /* Un petit espacement entre le mot et les filtres */
+}
+
+/*/////////////////////////////////// code d'origine //////////////////////////////////////////*/
 
 /* Small devices (phones, less than 768px) */
-@media (max-width: 767.98px) {
+
+/*@media (max-width: 767.98px) {
     /* ... */
+/*}*/
+
+/*////////////////////////////////////////// PARTIE RESPONSIVE /////////////////////////////////////////////////*/
+
+
+/*
+@media (max-width: 768px) {
+    .hebergement-cards {
+        grid-template-columns: repeat(2, 1fr); /* 2 colonnes sur les petits écrans */
+   /* }
 }
+*/
+/*///////////////////////////// Responsive pour tablette (max-width: 1024px) ///////////////////////////////*/
+
+@media (max-width: 1024px) {
+    .filter-button {
+        font-size: 13px; /* 🔹 Encore plus petit sur tablette */
+        width: 150px; /* 🔹 Réduction légère pour un meilleur rendu */
+        height: 45px;
+    }
+
+    .filter-options {
+        width: 100%; /* Garde la largeur complète */
+        justify-content: left; /* Centre les filtres */
+        display: flex;
+        flex-wrap: 1; /* Permet le passage à la ligne si nécessaire */
+    }
+
+    .filter-button {
+        width: 160px; /* Taille fixe même en mode responsive */
+        height: 50px;
+        font-size: 16px;
+        white-space: nowrap; /* 🔹 Empêche le texte de passer à la ligne */
+        font-weight:700 ;
+      
+    }
+    .filter-icon {
+        width: 20px;
+        height: 20px;
+    }
+}
+
+@media (max-width: 1024px) {
+    .activites-container {
+        display: flex; /* Utilisation de Flexbox */
+        flex-wrap: nowrap; /* Empêcher les éléments de passer à la ligne */
+        justify-content: center; /* Centrer les cartes horizontalement */
+        gap: 30px; /* Espacement horizontal entre les cartes */
+    }
+    
+    .activites .card {
+        width: 160px; /* Largeur de la carte */
+        height: 225px; /* Hauteur ajustable en fonction du contenu */
+        display: flex;
+        flex-direction: column; /* Disposition verticale */
+        justify-content: flex-start; /* Éviter l'espacement excessif */
+        margin: 0;
+        box-shadow: 0 3px 15px 0 rgba(0, 0, 0, 0.1);
+        border-radius: 20px;
+        overflow: hidden;
+        padding: 0;
+    }
+    
+    .activites .card:hover {
+        transform: scale(1.05);
+        transition: transform 0.2s ease-in-out;
+    }
+    
+    .activites .card img {
+        width: 100%; /* Adapter l'image à la largeur de la carte */
+        height: 170px; /* Réduire la hauteur de l'image */
+        object-fit: cover;
+        border-radius: 20px 20px 0 0;
+        object-position: center;
+        padding: 0;
+    }
+    
+    .activites .card-content {
+        padding: 10px; /* Espacement intérieur */
+        display: flex;
+        flex-direction: column;
+        justify-content: center; /* Centre verticalement le contenu */
+        align-items: left; /* Centre horizontalement le texte */
+        text-align: center; /* S'assure que le texte est bien centré */
+    }
+    
+    .activites .card-title {
+        font-size: 14px; /* taille de la police */
+        font-weight: bold; /*rend le texte gras*/
+        text-align: left; /*alligne le texte a gauche */
+        white-space: normal; /* Permettre au texte de revenir à la ligne */
+        margin-top: 1px; /* Ajuster l'espacement au-dessus du titre */
+    }
+
+    /*///////////////////////// FOOTER //////////////////////////////////////////*/
+
+    .footer {
+        width: 730px; /* Largeur du pied de page */
+        height: 163px; /* Hauteur du pied de page */
+        display: flex; /* Utilisation de Flexbox pour la disposition */
+        justify-content: space-between; /* Espacement égal entre les sections */
+        background: #F2F2F2; /* Couleur de fond */
+        padding: 20px; /* Espacement interne */
+        border-radius: 0px;
+        margin: 50px 0px -10px -20px; /* Centre horizontalement avec auto */
+        max-width: 100%;
+        gap: 10px;
+        
+    }
+   
+    
+    .footer-section {
+        flex: 1; /* Chaque section prend une part égale de l'espace disponible */
+        margin-right: 20px; /* Espacement à droite de chaque section */
+               
+    }
+    
+    .footer-section h3 {
+        margin-bottom: 5px; /* Marge inférieure des titres de sections */
+        font-size: 18px;
+    }
+    
+    .footer-section ul {
+        list-style: none; /* Supprimer les puces */
+        padding: 0; /* Supprimer les espacements internes */
+    }
+    
+    .footer-section ul li {
+        margin-bottom: 15px; /* Marge inférieure des éléments de la liste */
+        font-size: 16px;
+        margin-right: -50px;
+    }
+    
+    .footer-section ul li a {
+        text-decoration: none; /* Supprimer la décoration des liens */
+        color: #333; /* Couleur des liens */
+        margin-right: -50px;
+    }
+    
+    .footer-section ul li a:hover {
+        color:#0065FC;
+    }
+    
+}
+
