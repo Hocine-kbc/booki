@@ -69,16 +69,21 @@
             </div>
 
       <!--//////////////////////////////////////////// BARRE DE RECHERCHE  ///////////////////////////////////////-->
-                <div class="search-bar">
-                    
-                    <div class="search-icon-container">
-                        <i class="fa fa-map-marker-alt search-icon" aria-hidden="true"></i>
-                    </div>
-
-                    <input type="text" class="search-input" placeholder="Marseille, Frances">
-                    <button class="search-button">Rechercher</button>
-
-                </div>
+      <div class="search-bar">
+        <div class="search-icon-container">
+            <i class="fa fa-map-marker-alt search-icon" aria-hidden="true"></i>
+        </div>
+        <input type="text" class="search-input" placeholder="Marseille, France">
+        
+        <!-- Bouton normal -->
+        <button class="search-button">Rechercher</button>
+        
+        <!-- Bouton icône loupe (caché par défaut apparait en version 375px) -->
+        <button class="search-icon-btn">
+            <i class="fa fa-search"></i>
+        </button>
+    </div>
+                
                                          
             </div>
 
@@ -268,6 +273,9 @@
                         <h2 class="section-title">Les plus populaires</h2>
                         <i class="fa-solid fa-chart-line" aria-hidden="true"></i>
                     </div>
+
+            <!--//////////////////////////// parti populaire //////////////////////////////////-->
+            
                     <div class="populaires-cards">
                         <a href="#">
                             <article class="card">
