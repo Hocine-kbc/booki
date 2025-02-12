@@ -752,7 +752,7 @@ a {
         width: 160px; /* Taille fixe même en mode responsive */
         height: 50px;
         font-size: 16px;
-        white-space: nowrap; /* 🔹 Empêche le texte de passer à la ligne */
+        white-space: nowrap; /* Empêche le texte de passer à la ligne */
         font-weight:700 ;
       
     }
@@ -766,7 +766,7 @@ a {
         display: flex; /* Utilisation de Flexbox */
         flex-wrap: nowrap; /* Empêcher les éléments de passer à la ligne */
         justify-content: center; /* Centrer les cartes horizontalement */
-        gap: 30px; /* Espacement horizontal entre les cartes */
+        gap: 15px; /* Espacement horizontal entre les cartes */
     }
     
     .activites .card {
@@ -1485,8 +1485,7 @@ a {
         width: 375px;
     }
 
-
-        
+    
     
     /* Inverser l'ordre des sections */
     .populaires {
@@ -1498,7 +1497,7 @@ a {
     .populaires-title {
         
         margin-left: -5px;
-        width: 375px;
+        width: 320px;
         margin-bottom: -20px;
     }
 
@@ -1634,3 +1633,6 @@ a {
    
 }
 }
+
+
+/*/////////////////////////// MINIMUM 320px //////////////////////////*/
