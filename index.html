@@ -45,17 +45,42 @@
             
             <!--////////////////////// LE MENU "Hebergement" et " Activités ///////////////////////////////////-->
 
-            <div class="menu-container">
-                <div class="menu">
-                    <a href="#Hébergement-à-Marseille" class="menu-item" id="hebergements-item">Hébergements</a>
-                    <a href="#Activités-à-Marseille" class="menu-item" id="activites-item">Activités</a>
-                </div>
-                <div class="active-bar">
-                    <div class="hebergements-bar"></div>
-                    <div class="activites-bar"></div>
-                </div>
-            </div>
             
+<div class="menu-container"><!-- Conteneur principal du menu -->
+   
+    <div class="menu"> <!-- Menu contenant les éléments -->
+        
+        
+        <div class="flex-spacer"></div><!-- Espace flexible avant -->
+        <a href="#" class="menu-item" id="hebergements-item">Hébergements</a><!-- Lien vers Hébergements -->   
+        <div class="flex-spacer"></div><!-- Espace flexible entre -->
+        <a href="#" class="menu-item" id="activites-item">Activités</a><!-- Lien vers Activités -->
+        <div class="flex-spacer"></div><!-- Espace flexible après -->
+
+    </div>
+
+    <!--creation de la barre horizontale pour les petits ecrans-->
+    <div class="horizontal-bar">
+        <div class="left-half"></div>
+        <div class="right-half"></div>
+    </div>
+   
+    <!-- Barre active -->
+    <div class="active-bar">
+        <!-- Barre active pour Hébergements -->
+        <div class="hebergements-bar"></div>
+        <!-- Barre active pour Activités -->
+        <div class="activites-bar"></div>
+    </div>
+
+
+        <!-- SECTIONS CIBLES -->
+       <!-- <div  id="hebergements" class="target-section" ></div>-->
+        <!--<div  id="activites" class="target-section" ></div>-->
+
+</div> 
+ 
+
                 
                 <!--pour que le menu sois actif on utilise une methode qui permet de change URL du site pour interagir
                 avec le CSS et garder le munu activé en bleu avec la bare bleu et on dois le modifier 
@@ -110,8 +135,6 @@
                 <span class="info-icon"><i class="fas fa-info"></i></span>
                 <span class="info-link">Plus de 500 logements sont disponibles dans cette ville</span>
 
-    
-            
             </div>
              
         </header>
@@ -261,9 +284,9 @@
                             </div>
                             </article>
                             </a>
-
+                            <div>
                             <a href="#" class="afficher-plus">Afficher plus</a>  
-                            
+                            </div>
                    </div>
 
                 
