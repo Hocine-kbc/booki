@@ -55,7 +55,7 @@
     transition: color 0.3s ease; /* Ajoute une transition pour la couleur */
     top: -18px;
 }
-.menu-item:hover{
+.menu-item:hover {
     color: #0065FC;
 }
 
@@ -126,12 +126,9 @@
 
 .search-icon-container { /*contener de l'icone de position */
     background-color: #f0f0f0; /* Fond gris pour l'icône */
-    padding-right: 15px; /* Espace autour de l'icône */
-    padding-top: 10px;
-    padding-bottom: 10px;
-    padding-left: 15px;
+    padding: 10px 15px 10px 15px;
     border: 1.5px solid #F2F2F2; /* Bordure */
-    border-radius: 10px 0 0 10px; /* Coins arrondis pour correspondre à la barre de recherche */
+    border-radius: 15px 0 0 15px; /* Coins arrondis pour correspondre à la barre de recherche */
     
 }
 
@@ -160,7 +157,7 @@
     color: white;
     border: 1px solid #0065FC; /* Bordure bleue pour correspondre au fond */
     padding: 10px 15px;
-    border-radius: 0 12px 12px 0; /* Coins arrondis pour correspondre à la barre de recherche */
+    border-radius: 0 15px 15px 0; /* Coins arrondis pour correspondre à la barre de recherche */
     cursor: pointer;
     font-size: 16px;
     font-weight: bold; /* Met le texte en gras */
@@ -750,7 +747,7 @@ a {
         width: 100%; /* Garde la largeur complète */
         justify-content: left; /* Centre les filtres */
         display: flex;
-        flex-wrap: wrap; /* Permet le passage à la ligne si nécessaire */
+        flex-wrap: nowrap; /* Permet le passage à la ligne si nécessaire */
     }
 
     .filter-button {
@@ -926,8 +923,7 @@ a {
 
 @media (max-width: 767.98px){
 
-   
-
+    
     .main-container{
         padding-right: 20px;
         padding-left: 20px;
@@ -1000,15 +996,21 @@ body {
 }
 
 
+.target-section {
+    position: absolute;
+    top: -100px; /* Permet d'éviter que le scroll saute trop haut */
+    height: 1px; /* Assure que l'élément est détecté */
+    width: 100%;
+    visibility: hidden; /* Cache visuellement l'élément mais toujours détectable */
+}
+/* Moitiés de la barre */
+
 .horizontal-bar {
     height: 2px;
     width: 100vw;
-    background-color: #ff0404;
+    background-color: #c0c0c0;
     display: flex;
 }
-
-/* Moitiés de la barre */
-
 .horizontal-bar .right-half, 
 .horizontal-bar .left-half {
     height: 100%;
