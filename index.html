@@ -27,74 +27,24 @@
 <!--*//////////////////////////////////////////////////// PARTI HEADER /////////////////////////////////////////////// -->
        
         <header>
-            <div class="header-content"> <!--pour le logo Booki-->
+         <div class="header-content"> <!--pour le logo Booki-->
                 <a href="index.html" class="logo-container"> <!-- Le chemin vers la page d'accueil -->
-                    <img src="images\logo\Booki.svg" alt="Logo de Booki" class="logo"> <!-- Chemin vers ton fichier logo --> 
+                    <img src="images/logo/Logo_02.svg" alt="Logo de Booki" class="logo"> <!-- Chemin vers ton fichier logo --> 
                 </a>
-                
-                
-                <!-- /////////////////ajout du menu heberegement et activité, à reactivé avec JavaScripte //////////-
-                
-                    <div class="menu">
-                        <a href="#hebergements" class="menu-item">Hébergements</a>
-                        <a href="#activites" class="menu-item">Activités</a>
-                    </div>  
-                    
-                @@@@@@@@@@@@@@@ A REACTIVE AVEC JAVASCRIPT!!! @@@@@@@@@@@@@@@@@@@-->
-
-            
-            <!--////////////////////// LE MENU "Hebergement" et " Activités ///////////////////////////////////-->
+         
+ <!--//////////////////////////////////////// LE MENU "Hebergement" et " Activités ///////////////////////////////////-->
 
             
 <div class="menu-container"><!-- Conteneur principal du menu -->
    
     <div class="menu"> <!-- Menu contenant les éléments -->
-        
-        
-        <div class="flex-spacer"></div><!-- Espace flexible avant -->
-
             <a href="#hebergements" class="menu-item" id="hebergements-item">Hébergements</a><!-- Lien vers Hébergements -->   
-        
-        <div class="flex-spacer"></div><!-- Espace flexible entre -->
-        
             <a href="#activites" class="menu-item" id="activites-item">Activités</a><!-- Lien vers Activités -->
-        
-        <div class="flex-spacer"></div><!-- Espace flexible après -->
-
     </div>
- <!-- SECTIONS CIBLES -->
-       <div  id="Hebergements" class="target-section" ></div>
-       <div  id="Activites" class="target-section" ></div>
-
-       
-    <!--creation de la barre horizontale pour les petits ecrans-->
-    <div class="horizontal-bar">
-        <div class="left-half"></div>
-        <div class="right-half"></div>
-    </div>
-   
-   
-
-
-    <!-- Barre active des grand ecrans -->
-    <div class="active-bar">
-        <!-- Barre active pour Hébergements -->
-        <div class="hebergements-bar"></div>
-        <!-- Barre active pour Activités -->
-        <div class="activites-bar"></div>
-    </div>
-
-
-
 </div> 
 
 
-                
-                <!--pour que le menu sois actif on utilise une methode qui permet de change URL du site pour interagir
-                avec le CSS et garder le munu activé en bleu avec la bare bleu et on dois le modifier 
-                avec du JavaScript plus tard-->
-
-    <!--////////////////////////////////// TITRES DE LA PAGE (DECRIPTIONS) ///////////////////////////////////////-->
+<!--////////////////////////////////// TITRES DE LA PAGE (DECRIPTIONS) ///////////////////////////////////////-->
                 
             <div class="header-titles">
                 <h1>Trouvez votre hébergement pour des vacances de rêve</h1>
@@ -117,9 +67,8 @@
             <i class="fa fa-search"></i>
         </button>
     </div>
-                
-                                         
-            </div>
+                                            
+ </div>
 
      <!-- ///////////////////////////////////////////// PARTIE FILTRE ////////////////////////////////////////////-->
             <div class="filters">
@@ -127,10 +76,10 @@
                 <span class="filter-label">Filtres</span>
                 <div class="filter-options">
 
-                <button class="filter-button"><img src="images\victor\economie.svg" alt="Économique" class="filter-icon"> Économique</button>
-                <button class="filter-button"><img src="images\victor\familial.svg" alt="Familial" class="filter-icon"> Familial</button>
-                <button class="filter-button"><img src="images\victor\romantique.svg" alt="Romantique" class="filter-icon"> Romantique</button>
-                <button class="filter-button"><img src="images\victor\nos pepite.svg" alt="Nos pépites" class="filter-icon"> Nos pépites</button>
+                <button class="filter-button"><img src="victor/economie.svg" alt="Économique" class="filter-icon"> Économique</button>
+                <button class="filter-button"><img src="victor/familial.svg" alt="Familial" class="filter-icon"> Familial</button>
+                <button class="filter-button"><img src="victor/romantique.svg" alt="Romantique" class="filter-icon"> Romantique</button>
+                <button class="filter-button"><img src="victor/nos_pepite.svg" alt="Nos pépites" class="filter-icon"> Nos pépites</button>
                 </div>
         </div>
 
@@ -159,11 +108,11 @@
                         <h2 class="section-title">Hébergement à Marseille </h2> <!--titre-->
                    </div>
                    
-                   <div class="hebergement-cards"> <!--declaration de la carte d'hebergement-->
+            <div class="hebergement-cards"> <!--declaration de la carte d'hebergement-->
                      <a href="#"> <!--permet de cliqué sur la carte pour acceder a une autre page a deffinir plus tard-->
                         
                         <article class="card"> <!--configuration des article (hôtel)-->
-                            <img src="images\hebergements\fred-kleber.jpg" alt=" Hôtel du port"> <!--chemin ver l'image de la chamnre avec la description de l'image-->
+                            <img src="images/hebergements/fred-kleber.jpg" alt=" Hôtel du port"> <!--chemin ver l'image de la chamnre avec la description de l'image-->
                             <div class="card-content"> <!--contener de la carte -->
                                 <div class="card-txt"> <!--texte afficher dans la carte (le nom, le prix, et la note)-->
                                     <h3 class="card-title">Hôtel du port</h3><!--le nom de l'hôtel-->
@@ -175,10 +124,6 @@
                                         <i class="fa-xs fa-solid fa-star" aria-hidden="true"></i>
                                         <i class="fa-xs fa-solid fa-star" aria-hidden="true"></i>
                                         <i class="fa-xs fa-solid fa-star neutral-star" aria-hidden="true"></i>
-                                        <!--Cette balise <i> est utilisée pour insérer une icône de l'étoile pleine, 
-                                        grâce aux classes CSS fa-xs, fa-solid, et fa-star.
-                                        fa-xs: Détermine la taille de l'icône (ici, extra-small).(fa-solid fa-star): 
-                                        Indique qu'il s'agit d'une étoile pleine de la bibliothèque Font Awesome.-->
                                         <span class="sr-only">Note de 4 sur 5</span> <!--texte visible uniquement par les lecteurs, grâce à la classe sr-only.-->
                                 </div>
 
@@ -189,7 +134,7 @@
                         <a href="#"> <!--lien ver la page de l'hôtel selectioné pour l'instant la page n'est pas codé -->
                             <article class="card">
                         
-                            <img src="images\hebergements\febrian-zakaria.jpg" alt=" image de la cambre d'hotel de hocine">
+                            <img src="images/hebergements/febrian-zakaria.jpg" alt=" image de la cambre d'hotel de hocine">
                             <div class="card-content">
                                 <div class="card-txt">
                                     <h3 class="card-title">Hôtel chez Hocine</h3>
@@ -210,7 +155,7 @@
                         
                     <a href="#">
                         <article class="card">
-                            <img src="images\hebergements\reisetopia.jpg" alt=" image de la cambre d'hotel les mouette">
+                            <img src="images/hebergements/reisetopia.jpg" alt=" image de la cambre d'hotel les mouette">
                             <div class="card-content">
                                 <div class="card-txt">
                                     <h3 class="card-title">Hôtel Les Mouettes</h3>
@@ -232,7 +177,7 @@
 
                         <a href="#">
                             <article class="card">
-                            <img src="images\hebergements\annie-spratt.jpg" alt=" image de la cambre d'hotel de la mer">
+                            <img src="images/hebergements/annie-spratt.jpg" alt=" image de la cambre d'hotel de la mer">
                             <div class="card-content">
                                 <div class="card-txt">
                                     <h3 class="card-title">Hôtel de la mer</h3>
@@ -253,7 +198,7 @@
 
                             <a href="#">
                                 <article class="card">
-                            <img src="images\hebergements\marcus-loke.jpg" alt=" image de la cambre d'hotel canebiere">
+                            <img src="images/hebergements/marcus-loke.jpg" alt=" image de la cambre d'hotel canebiere">
                             <div class="card-content">
                                 <div class="card-txt">
                                     <h3 class="card-title">Auberge La Canebière</h3>
@@ -272,9 +217,9 @@
                             </article>
                             </a>
 
-                            <a href="#">
-                                <article class="card">
-                            <img src="images\hebergements\nicate-lee.jpg" alt=" image de la cambre d'hotel le panier">
+                    <a href="#">
+                        <article class="card">
+                            <img src="images/hebergements/nicate-lee.jpg" alt=" image de la cambre d'hotel le panier">
                             <div class="card-content">
                                 <div class="card-txt">
                                     <h3 class="card-title">Auberge Le Panier</h3>
@@ -287,17 +232,16 @@
                                         <i class="fa-xs fa-solid fa-star" aria-hidden="true"></i>
                                         <i class="fa-xs fa-solid fa-star neutral-star" aria-hidden="true"></i>
                                         <span class="sr-only">Note de 4 sur 5</span>
-                                </div>
+                               </div>
 
                             </div>
-                            </article>
-                            </a>
+                        </article>
+                    </a>
                             <div>
                             <a href="#" class="afficher-plus">Afficher plus</a>  
                             </div>
-                   </div>
+                </div>
 
-                
                 </section>
 
                 <section class="populaires">
@@ -306,7 +250,7 @@
                         <i class="fa-solid fa-chart-line" aria-hidden="true"></i>
                     </div>
 
-            <!--//////////////////////////// parti populaire //////////////////////////////////-->
+ <!--///////////////////////////////////////////// PARTIE POPULAIRE /////////////////////////////////////////////-->
             
                     <div class="populaires-cards">
                         <a href="#">
@@ -382,7 +326,7 @@
     <section class="activites">
         <a href="#">
         <article class="card">
-            <img src="images\activites\reno-laithienne.jpg" alt="Vieux-port">
+            <img src="images/activites/reno-laithienne.jpg" alt="Vieux-port">
             <div class="card-content">
                 <div class="card-txt">
                     <h3 class="card-title">Vieux-port</h3>
@@ -394,7 +338,7 @@
       <section class="activites">
         <a href="#">
         <article class="card">
-            <img src="images\activites\paul-hermann.jpg" alt="fort de pomégues">
+            <img src="images/activites/paul-hermann.jpg" alt="fort de pomégues">
                 <div class="card-content">
                     <div class="card-txt">
                         <h3 class="card-title">Fort de Pomégues</h3>
@@ -407,7 +351,7 @@
       <section class="activites">
         <a href="#">
         <article class="card">
-            <img src="images\activites\kilyan-sockalingum.jpg" alt="Parc national des Calanques">
+            <img src="images/activites/kilyan-sockalingum.jpg" alt="Parc national des Calanques">
             <div class="card-content">
                 <div class="card-txt">
                     <h3 class="card-title">Parc national des Calanques</h3>
@@ -420,7 +364,7 @@
     <section class="activites">
              <a href="#">
                 <article class="card">
-                    <img src="images\activites\florian-wehde.jpg" alt="Notre Dame de la Garde">
+                    <img src="images/activites/florian-wehde.jpg" alt="Notre Dame de la Garde">
                     <div class="card-content">
                         <div class="card-txt">
                             <h3 class="card-title">Notre-Dame-de-la-Garde</h3>
@@ -433,7 +377,8 @@
 </div>   
 
 </main>
-      
+   <!--//////////////////////////////////////// FOOTER ///////////////////////////////////////////////-->  
+
 <footer class="footer">
     <div class="footer-section">
         <h3> À propos</h3>
